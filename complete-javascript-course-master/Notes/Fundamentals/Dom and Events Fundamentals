@@ -1,0 +1,24 @@
+Dom and Events Fundamentals
+-----------------------------------
+
+document.querySelector([select]): use to interact with the DOM in JavaScript
+*.textContent : get the text of the element.
+
+Web APIs (Application Programming Interface)
+
+get/set input value
+document.querySelector([selector]).value=[value]
+
+[element].addEventListner: add an event to the attach element.
+
+Always you get string from input value.
+
+To manipulate css element in JavaScript one of the method is calling the property 
+style.[any css property] the value most be string
+
+querySelectorAll : select all occurrent of the element. That will return a NodeList
+
+[element].classList : allow you to access the collection of classes attach to this element. And 
+also have method manipulate those classes.
+
+KeyEvent belong to global element.

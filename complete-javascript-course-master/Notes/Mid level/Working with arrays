@@ -1,0 +1,113 @@
+Working with arrays
+----------------------------
+
+arr.slice() : work similar as string slice method
+const arr = ['a', 'b', 'c', 'd', 'e'];
+const str = 'hola,';
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -2));
+console.log(str.split('').slice(0, -1).join(''));
+
+arr.splice(index,removeAmount) : work exactly equals than slice the only thing is that it modified the original.
+
+arr.reverse(): is a mutate method that allow you to reverse the order of the array.
+5) ["e", "d", "c", "b", "a"]
+arr.reverse();
+5) ["e", "d", "c", "b", "a"]
+
+arr.concat(arr): group 2 array in one
+
+arr.forEach(function(elem,index,array){}) : allow you to loop over an array using callback function.Is a mutate method
+
+  if (mov > 0) {
+    console.log(`You deposited RD$${mov}`);
+  } else {
+    console.log(`You withdrew RD$${Math.abs(mov)}`);
+  }
+};
+
+movements.forEach(displayMovement);
+
+currencies.forEach(function (value, key) {
+  console.log(`${key}:${value}`);
+});
+
+domElement.insertAdjacentHTML(position,htmlTamplate);
+The insertAdjacentHTML() method of the Element interface parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML manipulation.
+
+position
+A DOMString representing the position relative to the element; 
+
+must be one of the following strings:
+'beforebegin': Before the element itself.
+'afterbegin': Just inside the element, before its first child.
+'beforeend': Just inside the element, after its last child.
+'afterend': After the element itself.
+
+The Element property innerHTML gets or sets the HTML or XML markup contained within the element
+
+Map : return a new array containing the result of applying an operations of all orginal array element.
+
+Filter : return a new array containing the result of the pass test condition.
+
+reduce : reduce all array element into one single value.
+
+iterable.reduce(function(acumulator,currentValue,index,array){},INITIAL_VALUE)
+
+Array.prototype.find() :
+The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfies the testing function, undefined is returned.
+
+form: when you have element inside form whenever you press enter a click event trigger.
+
+Array.prototype.findIndex():
+
+The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
+Array.prototype.some():
+
+The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+
+
+Array.prototype.flat():
+The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+// expected output: [0, 1, 2, 3, 4]
+
+
+Array.prototype.flatMap(): 
+
+The flatMap() method returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1, but slightly more efficient than calling those two methods separately.
+
+Array.prototype.sort():
+
+The sort() method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+Array.prototype.fill(fillValue,startIndex,length):
+
+The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+Array.from():
+
+The Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.
+
+console.log(Array.from('foo'));
+// expected output: Array ["f", "o", "o"]
+
+labelBalance.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log(
+    Array.from(document.querySelectorAll('.movements__value'), mov =>
+      Number(mov.textContent.replace('💲', ''))
+    )
+  );
+});
+ 

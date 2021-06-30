@@ -1,0 +1,39 @@
+16-Asynchronous
+----------------------
+request=new XMLHttpRequest()
+request.open([method],[URL])
+request.send()
+
+request.responseText;
+
+Promise: An object that is used as a placeholder for the future result of an asynchronous operation
+Promise: A container for an asynchronously delivered value
+Promise: A container for a future value
+
+Merlin Ortiz
+809-544-8900
+
+
+
+Handling Error
+
+There are two way 
+1-passing call back funcion
+(url).then(res=>res.json(),err=> console.log(err))
+2-using catch function
+.catch(err=> alert(err))
+.finally(()=>)
+
+promise.resp.ok
+throw new Error('Message'); and propagate in the catch method
+
+asych and await
+
+Promise.all() Running promise paralel if one fail all will be rejected
+
+Promise.all(promise,promise,promise)
+
+Promise.race(promise,promise) ereject what is win
+
+
+

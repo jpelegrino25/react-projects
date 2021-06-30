@@ -1,0 +1,120 @@
+A closer Look at functions
+-----------------------------------
+
+Default parameter: 
+
+const bookings = [];
+
+const createBooking = function (planeNum, passager = 1, price = 199) {
+  const booking = {
+    planeNum,
+    passager,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
+};
+
+createBooking('AA300');
+createBooking('AA300', 45);
+createBooking('AA300', 200, 300);
+
+High order function is function that receive another function as argument or return it.
+
+Callback function:
+
+const add = function (num1, num2) {
+  return Number(num1) + Number(num2);
+};
+
+const substract = function (num1, num2) {
+  return Number(num1) - Number(num2);
+};
+
+const multiply = function (num1, num2) {
+  return Number(num1) * Number(num2);
+};
+
+const calculate = function (num1, num2, func) {
+  console.log(func(num1, num2));
+};
+
+// calculate(25, 3, add);
+// calculate(25, 3, multiply);
+// calculate(25, 3, substract);
+
+call and apply : allow you to attach a method to a specify object base on a define structure.
+
+const hotel = {
+  name: 'Hamaca',
+  guesses: [],
+  checkIn(fullName, creditCard) {
+    console.log(`${fullName} ${creditCard}`);
+    this.guesses.push({ name: this.name, fullName, creditCard });
+  },
+};
+
+const restaurant = {
+  name: 'Hamaca',
+  guesses: [],
+};
+
+hotel.checkIn('Juan Guerrero', 4522154);
+console.log(hotel);
+
+const checkIn = hotel.checkIn;
+
+// checkIn('Pedro Martinez', 41111);
+checkIn.call(restaurant, 'Pedro Martinez', 1245555);
+console.log(restaurant);
+checkIn.apply(hotel, ['Maria Gonzalez', 41111]);
+const guess = ['Maria Gonzalez', 41111];
+checkIn.call(hotel, ...guess);
+
+function.bind(this) : create a brand new funtion with the specify object pass.
+const ckBind = checkIn.bind(restaurant);
+ckBind('Pedro', 111111);
+
+Preset function using function.bind
+const ckBind2 = checkIn.bind(restaurant, 'Rosa Maria');
+ckBind2(33333);
+
+Event listener using function.bind
+
+const airplane = { planeCount: 300 };
+airplane.addPlane = function () {
+  console.log(this);
+  this.planeCount++;
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', airplane.addPlane.bind(airplane));
+
+Partial application something like overwriting
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+const addPresetTax = addTax.bind(null, 0.23);
+console.log(addPresetTax(200));
+
+Inmidiatly call function : is use to create scope
+(function(){
+})();
+
+Closures: is the closed over variable enviroment of the execution context in which function
+was created even after that execution context is gone.
+
+A closures gives function access to all the variables of its parent function, even after that parent 
+function has returned. The function keep a reference of its outer scope, which preserves the scope chain
+thoughout time.
+
+closure is like a backpack where you have all your things even you are not using the backpack
+whenever time you need you can find it.
+console.dir(functionName) : to see the closure value not accessible
+
+
+closure also can use global scope variables
+
+
+

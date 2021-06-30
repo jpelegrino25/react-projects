@@ -1,0 +1,187 @@
+Data structure Moderm operations and string
+---------------------------------------------
+
+Destructuring is the proccess of take some element from a specific structure.
+Destructure array
+
+const arr=[2,5,6,102]
+const [one,second]=arr;
+
+switching the order element are in the array
+
+[second,one]=[one,second]
+
+Destructuring nested array
+const arr=[25,36,[10,14]];
+const [i,,[j,p]]=arr;
+
+Destructuring with default value
+const [i=1,j=1,z=0]=[23,41]
+
+Destructuring Object
+use {} to destruct object. You most refere to exact name of the properties.
+use alias to rename properties.
+const restaurant ={
+	name:'Pelicanos',
+	openHours: {
+		fri:{open:11,close:22}
+	}
+}
+
+const {name: restaurantName}=restaurant;
+default value
+const {name='',waitress=[]}=restaurant;
+
+Mutating object: to do that you most wrap the block in parentisis like: ({a,b}=obj)
+
+object nested destruct
+const {openHours}=restaurant;
+const {fri:{open,close}}=openHours;
+
+Destructuring object from a function
+
+const func=function({age,name}) {
+	console.log(`Your name is ${name} and you are ${age} years old`)
+}
+
+func({name:'Juan',age:12})
+
+
+Spread operator: allow you to spand the values of a structure taking the values of the object 
+out of it.
+
+const arr=[12,30]
+[...arr,85]
+
+shadow copy of array:
+const shcopy=[...arr]
+
+join two arrays
+[...mainMenu,...starterMenu]
+
+spread operator can be apply to iterables
+Iterables: array,string, map,sets, not object
+
+you can't use spread opt in something that not accept , like: 
+console.log(`${...arr}`)
+
+const func=function(p1,p2,p3) {}
+
+const arr=[23,45,74]
+func(...arr)
+
+Spread object 
+
+{propertyThree:10,...origanlObject,propertyOne:25,propertyTwo:'Juan'}
+
+Spread operator: unpack
+Rest pattern : pack
+
+Rest ... on array
+const [one,two,...others]=[25,41,23,10]
+
+Rest ... on object
+const {propertyOne,...otherProperty}=originalObject
+
+Rest ... on function
+
+const func=function(...numbers){}
+func(2,4)
+func(3,41,74,2)
+
+shortcircuit || : only evaluate the truefy value like:
+console.log(true || ''); true
+console.log(0 || null) null
+
+shortcircuit && : evaluate the first falsy value that it find
+console.log(null && 25) null
+
+another for loop
+for (let item of array)
+
+object literal 
+if the array has the same name property no need to do assignment.
+
+Optional chaining
+restaurant.openingHour.mon?.open
+
+Object.keys : create an array of all the properties of the object.
+
+Object.entries({}) : create list key/value of the object so you can iterate through.
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  let teamStr = team === 'x' ? 'Draw' : ' victory ' + game[team];
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+
+Set data Structure
+---------------------------
+Is a data structure that does not allow duplicate
+const setVar=new Set(<iterable>)
+setVar.size : get the length of the set
+set.has(<element>): verify if that element exist in the set
+set.add(<element>) : add element to the set
+set.delete(<element>): delete element from the set
+you most not use index to retrieve data from a set
+set.clear(): delete all the element from the set
+
+The main objective of a set is remove duplicate element from an array.
+
+const employeePositions = ['waitress', 'Manager', 'Receptionist', 'waitress'];
+const positions = [...new Set(employeePositions)];
+console.log(positions);
+
+Map Data Structure
+------------------------
+Map key/value pair of any type.
+const map=new Map();
+
+map.set(key,value): map an element.
+you can chain set method 
+
+map.get(key): read data from the map
+map.has(key): check if that map exist.
+map.delete(key): remove this particular map
+map.clear(): remove all map element in this map
+
+Build a map from two dimentional array 
+new Map([
+[key,value]
+]);
+
+new Map(Object.entries(obj))
+
+Comparison of Data structure
+--------------------------------
+Simple value [array/set]
+Key/ value [object/map]
+
+When need to store key/value is preferable to use map over object.
+
+String 
+--------------------------
+const str='Hello'
+str[0] -> H
+
+Last index of
+-----------------------
+str.lastIndexOf('l') --> 3
+indexOf can be use with whole word, but it's case sensitive.
+str.slice(index): return a substring starting from the specify index
+str.slice(startIndex,endIndex)
+
+string is primitive in JavaScript but each time you call a method from string it makes autoboxing
+converting the primitive to object.
+
+every string method return a new string so you can do chain.
+str.startsWith(sequence) : check if it contains that sequence.
+str.endsWith(sequence) : check if it end with that sequence
+
+str.join(pattern) take an array and join it in string
+padStart(pad,character) ,padEnd(pad,character) : add symbol specify to the 
+start or end of the string
+
+str.repeat(number): alow to reapeat the string the specify amount of time.
+
+
+

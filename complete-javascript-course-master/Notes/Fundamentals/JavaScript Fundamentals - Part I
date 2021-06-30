@@ -1,0 +1,64 @@
+JavaScript Fundamentals - Part I
+------------------------------------
+
+Ctrl +/- increase/decrease the console zoom
+
+What is JavaScript?
+Is a heigh level object oriented multi paradigm programming language.
+
+HTML --> is the noun
+CSS  --> is the adjetive
+JavaScript --> is the verb
+
+ES --> is ECMAScript
+
+Data Types
+-----------------------
+
+Number --> in JavaScript is always floating point.
+typeof --> tell you the variable type 
+
+let and var
+--------------------
+
+let is block code.
+var is function code.
+declaring variable without let or var it's means that is global.
+
+[# ** #] 2 ** 3 it's means 2 power 3 that is equals to 8
+
+Precedence operators: it's very useful to take in consideration in order to understand expressions:
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operator_Precedence
+
+String template ``
+
+Type conversion
+Number('25')
+String(25)
+
+NaN produces when try to convert to number something that actually not a number.
+NaN is typeof number its means that is a invalid number.
+
+Type cohersion
+
+String: 
+'Iam '+15+' years old'
+'25'+'2' 252
+
+Number
+'12'-'3' 9
+'2'*3-'2' 4
+
+There are 5 falsy values: [0,'',undefined,null,NaN]
+
+=== strict
+==  loose
+
+let value=prompt(""); return a string type
+
+JavaScript backward compatibility not forward compatibility
+
+
+ 
+

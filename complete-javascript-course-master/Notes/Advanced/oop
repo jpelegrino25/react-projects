@@ -1,0 +1,31 @@
+Object oriented Programming
+
+Inheritance work by instantiation with prototype
+
+class expression
+const Person = class {}
+
+In a functional class to inherit property constructor use call
+
+const Person=function(firstName) {
+	this.firstName=firstName;
+}
+
+function Student(firstName){
+	Person.call(this,firstName);
+}
+
+Linking student to Person
+Student.prototype=Object.create(Person.prototype)
+
+Overriding inherit method
+
+Student.prototype.calAge=function() {....}
+
+Method chain
+just return this inside the method
+
+deposit(25) {
+this.movements.push(25);
+return this;
+}

@@ -1,0 +1,70 @@
+Advanced DOM and Events
+-----------------------------
+
+Node : <p></p>
+----------
+Element
+Text
+Comment
+Document
+
+Select elements:
+document.documentElement
+document.body
+document.head
+
+document.getElementByTagName(<tag_name>) : return a collection of the elements
+
+document.createElement(<element>): create a node element for the document
+
+const elem=document.createElement(<elem>);
+elem.cloneNode(flag): create a copy of the node.
+
+node.before(elem)
+node.after(elem) : Insert the node before or after the specify node.
+
+Remove element
+elem.remove()
+all school: elem.parentElement.removeChild(elem)
+
+getComputedStyle(node).property
+
+elem.style.setProperty(<oldValue>,<newValue>)
+
+const logo=document.querySelector('logo')
+logo.getAttribute('src')
+
+Data attribute
+Use data as prefix to add attribute to the dataset of the element
+<div class="had" data-main-size="25"/>
+
+Javascript
+
+
+Get coordinate
+const coord=elem.getBoundingClientRect()
+coord.left,coord.top, ...
+Current Scroll
+window.pageXoffset
+window.pageYoffset
+
+elem.scrollIntoView({behavior:'smooth'})
+
+e.currentTarget and this keyword are the same object
+
+Event Propagation
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+DOM reversing is the action to get element parting to other elements
+
+The closest() method traverses the Element and its parents (heading toward the document root) until it finds a node that matches the provided selector string. Will return itself or the matching ancestor. If no such element exists, it returns null.
+
+when working with component is good idea remove clases added before added.
+
+

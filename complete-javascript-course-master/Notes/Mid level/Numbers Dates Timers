@@ -1,0 +1,47 @@
+Numbers Dates Timers
+------------------------------------
+
+It's not recommended using javaScript for stadistic operations
+
+convert string to number using the plus(+) operator
++'25'
+
+BigInt: allow you work with big numbers
+use shorthand [n]
+
+45n
+bigInt(number)
+
+Date is 0 base
+console.log(date);
+console.log(date.getTime());
+console.log(date.getFullYear());
+console.log(date.getHours());
+console.log(date.getMonth());
+console.log(Date.now());
+console.log(new Date(Date.now()));
+
+new Date().toISOString():
+The toISOString() method returns a string in simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (YYYY-MM-DDTHH:mm:ss.sssZ or ±YYYYYY-MM-DDTHH:mm:ss.sssZ, respectively). The timezone is always zero UTC offset, as denoted by the suffix "Z".
+
+Intl.DateTimeFormat:
+The Intl.DateTimeFormat object enables language-sensitive date and time formatting.
+console.log(new Intl.DateTimeFormat('en-US').format(date));
+
+navigator.language: get the current configure locale
+
+new Intl.NumberFormat(): The Intl.NumberFormat object enables language-sensitive number formatting.
+console.log(new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
+// expected output: "123.456,79 €"
+
+The setTimeout() method of the WindowOrWorkerGlobalScope mixin (and successor to Window.setTimeout()) sets a timer which executes a function or specified piece of code once the timer expires.
+
+const ingredients = ['Cheese', 'chicken'];
+setTimeout(
+  ingredientes =>
+    console.log(
+      `Here is your pizza 🍕 ingredients: ${ingredientes.join(' and ')}`
+    ),
+  3000,
+  ingredients
+);

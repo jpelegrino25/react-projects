@@ -1,0 +1,29 @@
+JavaScript Fundamentals - Part II
+-----------------------------------------------
+
+'use strict' activate secure javascript code
+
+Function declaration
+function [function_name]{}
+
+Function expression
+const [function_name]=function(){}
+
+Arrow function 
+its like function expression except its arrow and different variations
+
+arrow function with one line don't need return keyword.
+
+Arrays operations:
+
+push([element]) add at the end of the array
+pop() remove the last element of the array
+unshift([element]) add at the begining of the array
+shift remove at the begining of the array
+indexOf([element]) return the index of the specify element -1 weather not exists
+includes([element]) return true/false weather is the element is present or not
+
+Object has two way to access it property by '.' or '[]'
+add property to object using  '.' or '[]' and the new property
+
+array in JavaScript is dynamilly start adding.

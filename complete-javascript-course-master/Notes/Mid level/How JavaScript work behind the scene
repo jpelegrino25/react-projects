@@ -1,0 +1,66 @@
+How JavaScript work behind the scene?
+-------------------------------------------
+
+High Level
+Garbage collector
+Interpreter or just in time compiled
+Multi-paradigm
+Prototype-base object-oriented
+First-class funtion
+Dynamic
+Single-threaded
+Non-blocking event loop
+
+JavaScript engine: is a JS program that convert your code into machine code.
+
+call Stack memory: is where your javascript code are executing
+Heap memory: is where objects are stored.
+
+JavaScript is a just in time compilation(JIT) --> it compiles and run the code rightaway
+ENGINE[your code->(Parsing[AST]->Compiling->Executing)]
+
+Web Api are functionalities provided to the engine but are not part of it.
+
+Event loop: takes call back queue functionalities and put it into the call stack memory.
+
+Global execution context: is where JS execute all the code that are outsie a function 
+Execution Context: where JS is executed
+
+Things in execution context:
+1-Variable enviroment
+2-Scope chain
+3-this
+
+Global execution stay alive until you close the browser or kill the process.
+
+let and const : are block scope
+var : is function scope
+
+There are three scope:
+1-global scope
+2-function scope
+3-block scope
+
+Hoisting : is the process of making your variable accessible/usable before they declared
+
+variable declare with let and const not belong to window object
+
+this doesn't point to the function itself.
+this is not its variable enviroment.
+
+1-this in global scope is the window object
+2-this in regular function is undefined
+3-this with strict mode in function is the window object
+4-this in arrow function is it parent object
+5-this in a method from a object is the actual object.
+
+To call this from inner regular function, you have to assign this object to a variable like:
+const self=this;
+
+but this same soluction can be solved using arrow function.
+
+arguments is a keyword that work in function and it takes dynamic arguments
+but is not work in arrow function.
+
+To assign a shadow copy new object use this syntax:
+Object.assign({},originalObject); 
